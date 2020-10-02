@@ -10,21 +10,60 @@ public class UserRegistrationTest {
 	
 	
 	@Test
-    public void whenGivenFirstNameShouldReturnTrue() {
+    public void FirstNameShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
 
         assertTrue(userRegistration.isValidFirstName("Prem"));
 
     }
 	@Test
-    public void whenGivenFirstNameShouldReturnTrueFirst() {
+    public void FirstNameShouldReturnTrueFirst() {
         UserRegistration userRegistration = new UserRegistration();
 
         assertTrue(userRegistration.isValidFirstName("Nayak"));
     }
-
 	@Test
-    public void whenGivenEmailShouldReturnFalse() {
+    public void FirstNameShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+
+        assertFalse(userRegistration.isValidFirstName("prakash"));
+    }
+
+    @Test
+    public void FirstNameShouldReturnFalseFirst() {
+        UserRegistration userRegistration = new UserRegistration();
+
+        assertFalse(userRegistration.isValidFirstName("PP"));
+    }
+    
+    @Test
+    public void LastNameShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+
+        assertTrue(userRegistration.isValidLastName("Prem"));
+
+    }
+	@Test
+    public void LastNameShouldReturnTrueFirst() {
+        UserRegistration userRegistration = new UserRegistration();
+
+        assertTrue(userRegistration.isValidLastName("Nayak"));
+    }
+	@Test
+    public void LLastNameShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+
+        assertFalse(userRegistration.isValidLastName("prakash"));
+    }
+
+    @Test
+    public void LastNameShouldReturnFalseFirst() {
+        UserRegistration userRegistration = new UserRegistration();
+
+        assertFalse(userRegistration.isValidLastName("PP"));
+    }
+	@Test
+    public void EmailShouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
 
         assertFalse(userRegistration.isValidEmail("abc"));
@@ -42,49 +81,37 @@ public class UserRegistrationTest {
         assertFalse(userRegistration.isValidEmail("abc@gmail.com.aa.au"));
     }
 
-    @Test
-    public void whenGivenFirstNameShouldReturnFalse() {
-        UserRegistration userRegistration = new UserRegistration();
-
-        assertFalse(userRegistration.isValidFirstName("prakash"));
-    }
-
-    @Test
-    public void whenGivenFirstNameShouldReturnFalseFirst() {
-        UserRegistration userRegistration = new UserRegistration();
-
-        assertFalse(userRegistration.isValidFirstName("PP"));
-    }
+    
 	
     @Test
-    public void whenGivenNumberShouldReturnTrue(){
+    public void NumberShouldReturnTrue(){
         UserRegistration userRegistration = new UserRegistration();
 
         assertTrue(userRegistration.isValidMobileNum("91 8460243763"));
     }
 
     @Test
-    public void whenGivenNumberShouldReturnFalse(){
+    public void NumberShouldReturnFalse(){
         UserRegistration userRegistration = new UserRegistration();
 
         assertFalse(userRegistration.isValidMobileNum("84602437"));
     }
 
     @Test
-    public void whenGivenNumberShouldReturnFalseFirst(){
+    public void NumberShouldReturnFalseFirst(){
         UserRegistration userRegistration = new UserRegistration();
 
         assertFalse(userRegistration.isValidMobileNum("84602456abc"));
     }
 	@Test 
-	public void whenGivenNumberShouldReturnFalseSecond(){
+	public void NumberShouldReturnFalseSecond(){
         UserRegistration userRegistration = new UserRegistration();
 
         assertTrue(userRegistration.isValidMobileNum("918460243763"));
     }
 
     @Test
-    public void whenGivenNumberShouldReturnTrueFirst(){
+    public void NumberShouldReturnTrueFirst(){
 
         UserRegistration userRegistration = new UserRegistration();
 
@@ -92,7 +119,7 @@ public class UserRegistrationTest {
 
     }
     @Test
-    public void whenGivenNumberShouldReturnTrueSecond(){
+    public void NumberShouldReturnTrueSecond(){
 
         UserRegistration userRegistration = new UserRegistration();
 
@@ -100,25 +127,25 @@ public class UserRegistrationTest {
 
     }
     @Test
-    public void whenGivenPasswordShouldReturnTrue(){
+    public void PasswordShouldReturnTrue(){
         UserRegistration userRegistration = new UserRegistration();
 
         assertTrue(userRegistration.isValidPassword("Prem@1309"));
     }
 
     @Test
-    public void whenGivenPasswordShouldReturnFalse(){
+    public void PasswordShouldReturnFalse(){
         UserRegistration userRegistration = new UserRegistration();
 
         assertFalse(userRegistration.isValidPassword("Prem13098"));
     }
     @Test
-    public void whenGivenPasswordShouldReturnTrueSecond(){
+    public void PasswordShouldReturnTrueSecond(){
         UserRegistration userRegistration = new UserRegistration();
         assertTrue(userRegistration.isValidPassword("Premnayak@123"));
     }
     @Test
-    public void whenGivenPasswordShouldReturnFalseSecond(){
+    public void PasswordShouldReturnFalseSecond(){
         UserRegistration userRegistration = new UserRegistration();
 
         assertFalse(userRegistration.isValidPassword("130981998"));
