@@ -81,7 +81,6 @@ public class UserRegistrationTest {
               {"abc.100@abc.com.in",true},
               {"abc@1.com",true},
               {"abc+100@gmail.com",true},
-              {"pooja.todkar12@gmail.com",true},
               {"abc@gmail.com.com",true},
       
       });
