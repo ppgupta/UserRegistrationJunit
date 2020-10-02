@@ -6,6 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
+import java.util.Arrays;
+import java.util.Collection;
+
+@RunWith(Parameterized.class)
+
 public class UserRegistrationTest {
 	
 	
@@ -16,12 +21,14 @@ public class UserRegistrationTest {
         assertTrue(userRegistration.isValidFirstName("Prem"));
 
     }
+
 	@Test
     public void FirstNameShouldReturnTrueFirst() {
         UserRegistration userRegistration = new UserRegistration();
 
         assertTrue(userRegistration.isValidFirstName("Nayak"));
     }
+
 	@Test
     public void FirstNameShouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
@@ -62,6 +69,24 @@ public class UserRegistrationTest {
 
         assertFalse(userRegistration.isValidLastName("PP"));
     }
+    
+    @Parameterized.Parameters
+  public static Collection EmailShouldReturnTrue() {
+      UserRegistration userRegistration = new UserRegistration();
+
+      return Arrays.asList(new Object[][]{
+              {"abc@yahoo.com",true},
+              {"abc111@gmail.com",true},
+              {"premprakash@gmail.com",true},
+              {"abc.100@abc.com.in",true},
+              {"abc@1.com",true},
+              {"abc+100@gmail.com",true},
+              {"pooja.todkar12@gmail.com",true},
+              {"abc@gmail.com.com",true},
+      
+      });
+
+  }
 	@Test
     public void EmailShouldReturnFalse() {
         UserRegistration userRegistration = new UserRegistration();
@@ -118,6 +143,7 @@ public class UserRegistrationTest {
         assertTrue(userRegistration.isValidMobileNum("9723356591"));
 
     }
+
     @Test
     public void NumberShouldReturnTrueSecond(){
 
@@ -126,6 +152,7 @@ public class UserRegistrationTest {
         assertTrue(userRegistration.isValidMobileNum("+97 8623356591"));
 
     }
+
     @Test
     public void PasswordShouldReturnTrue(){
         UserRegistration userRegistration = new UserRegistration();
@@ -139,11 +166,13 @@ public class UserRegistrationTest {
 
         assertFalse(userRegistration.isValidPassword("Prem13098"));
     }
+
     @Test
     public void PasswordShouldReturnTrueSecond(){
         UserRegistration userRegistration = new UserRegistration();
         assertTrue(userRegistration.isValidPassword("Premnayak@123"));
     }
+
     @Test
     public void PasswordShouldReturnFalseSecond(){
         UserRegistration userRegistration = new UserRegistration();
